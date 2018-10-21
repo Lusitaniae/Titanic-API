@@ -9,6 +9,10 @@ services:
     working_dir: /var/www
     volumes:
       - ./:/var/www
+    links:
+      - database
+    environment:
+      DB_HOST: database
 
   # Dependency Manager
   composer:
@@ -17,6 +21,7 @@ services:
     volumes_from:
       - app
     command: install
+
   # The Web Server
   web:
     build:
