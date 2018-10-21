@@ -3,6 +3,7 @@ services:
 
   # The Application
   app:
+    image: lusotycoon/app
     build:
       context: ./
       dockerfile: resources/docker/app.dockerfile
@@ -24,6 +25,7 @@ services:
 
   # The Web Server
   web:
+    image: lusotycoon/web
     build:
       context: ./
       dockerfile: resources/docker/web.dockerfile
