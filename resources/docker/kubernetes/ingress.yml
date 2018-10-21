@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: titanic-rest-api-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  backend:
+    serviceName: web
+    servicePort: 8080
+  rules:
+  - host: titanic-rest-api-demo.com
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: web
+          servicePort: 8080
