@@ -4,13 +4,14 @@ class ApiHttpTest extends TestCase
 {
 
     /*
-    * Verify the Home route is accessible.
+    * Verify that the Home route is accessible.
     */
     public function testHome()
     {
       $response = $this->json('GET', '/api/v1/')
                       ->seeJson(["Welcome to the Titanic Passenger API."]);
     }
+
     /*
     * Verify that the database has been fully seeded and we're able to find a passenger.
     */
