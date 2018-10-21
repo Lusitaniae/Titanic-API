@@ -14,3 +14,13 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix'=>'api/v1'], function ($app)
+{
+    $app->get('/',                  'PassengerController@home');
+    $app->get('/passengers',        'PassengerController@index');
+    $app->post('/passenger',        'PassengerController@create');
+    $app->get('/passenger/{id}',    'PassengerController@show');
+    $app->put('/passenger/{id}',    'PassengerController@update');
+    $app->delete('/passenger/{id}', 'PassengerController@destroy');
+});
