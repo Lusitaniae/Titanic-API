@@ -9,13 +9,17 @@ It provides a simple CRUD interface to interact with the imported passenger data
 Bootstrap the Titanic Passenger API using docker-compose:
 
 Build the containers
+
 `docker-compose up --build -d`
 
 Use default config file
+
 `docker-compose exec app cp .env.example .env`
 
 Run database migrations
+
 `docker-compose exec app php artisan migrate --seed`
 
 Run integration tests
+
 `docker-compose exec app vendor/bin/phpunit`
