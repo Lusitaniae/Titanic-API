@@ -63,3 +63,15 @@ Run database migrations
 Run integration tests
 
 `docker-compose exec app vendor/bin/phpunit`
+
+## K8s
+
+`!! This is largely WIP !!`
+
+Change directory
+
+`cd resources/docker/kubernetes/`
+
+Apply configurations to your k8s cluster
+
+`kubectl create -f .`
