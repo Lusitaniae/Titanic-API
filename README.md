@@ -1,6 +1,7 @@
 # Titanic Passenger API
 
 The Titanic Passenger API is a simple RESTful API built on PHP Lumen.
+
 It provides a simple CRUD interface to interact with the imported passenger data.
 
 
