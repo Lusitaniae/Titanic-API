@@ -52,10 +52,6 @@ Build the containers
 
 `docker-compose up --build -d`
 
-Use default config file
-
-`docker-compose exec app cp .env.example .env`
-
 Run database migrations
 
 `docker-compose exec app php artisan migrate --seed`
