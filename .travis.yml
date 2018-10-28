@@ -3,7 +3,10 @@ sudo: required
 services:
   - docker
 
-before_script:
+before_install:
+  - sudo service mysql stop
+
+install:
   - docker-compose up --build -d
   - docker-compose exec app php artisan migrate --seed
 
