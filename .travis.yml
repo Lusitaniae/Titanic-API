@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+
+before_script:
+  - docker-compose up --build -d
+  - docker-compose exec app php artisan migrate --seed
+
+script:
+  - docker-compose exec app vendor/bin/phpunit

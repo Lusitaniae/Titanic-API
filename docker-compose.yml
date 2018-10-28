@@ -17,11 +17,11 @@ services:
 
   # Dependency Manager
   composer:
-    image: "composer"
+    image: composer
     working_dir: /var/www
     volumes_from:
       - app
-    command: install
+    command: install --optimize-autoloader
 
   # The Web Server
   web:
