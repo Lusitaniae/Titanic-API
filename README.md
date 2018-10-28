@@ -1,5 +1,8 @@
 # Titanic Passenger API
 
+[![Build Status](https://travis-ci.com/Lusitaniae/API-Exercise.svg?branch=master)](https://travis-ci.com/Lusitaniae/API-Exercise)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Lusitaniae/API-Exercise/master/LICENSE)
+
 The Titanic Passenger API is a simple RESTful API built on PHP Lumen.
 
 It provides a simple CRUD interface to interact with the imported passenger data.
