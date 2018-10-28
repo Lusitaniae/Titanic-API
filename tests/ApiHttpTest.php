@@ -47,7 +47,7 @@ class ApiHttpTest extends TestCase
           'sex' => 'male',
           'siblings_spouses_aboard' => 1,
           'parents_children_aboard' => 1,
-          'fare' => '120,4215'
+          'fare' => '120.4215'
       ];
       $response = $this->json('POST', '/api/v1/passenger', $passenger)
                       ->seeJson($passenger);
@@ -66,7 +66,7 @@ class ApiHttpTest extends TestCase
           'sex' => 'male',
           'siblings_spouses_aboard' => 1,
           'parents_children_aboard' => 1,
-          'fare' => '120,4215'
+          'fare' => '120.4215'
       ];
       $response = $this->json('PUT', '/api/v1/passenger/3', $passenger)
                       ->seeJson($passenger);
