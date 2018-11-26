@@ -14,3 +14,8 @@ install:
 
 script:
   - docker-compose exec app vendor/bin/phpunit
+
+  - > # run extensive load testing during nightly builds
+      if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
+          docker run --net=host -ii loadimpact/k6 run - <load_test.js
+      fi
