@@ -1,7 +1,19 @@
+dist: trusty
 sudo: required
 
 services:
   - docker
+
+jdk:
+  - oraclejdk8
+
+addons:
+  sonarcloud:
+    organization: "lusitaniae-github"
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
 
 before_install:
   - sudo service mysql stop
@@ -14,6 +26,13 @@ install:
 
 script:
   - docker-compose exec app vendor/bin/phpunit
+  
+  - sonar-scanner \
+    -Dsonar.projectKey=Lusitaniae_API-Exercise \
+    -Dsonar.organization=lusitaniae-github \
+    -Dsonar.sources=. \
+    -Dsonar.host.url=https://sonarcloud.io \
+    -Dsonar.login=$SONAR_TOKEN
 
   - > # run extensive load testing during nightly builds
       if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
