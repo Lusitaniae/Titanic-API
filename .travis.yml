@@ -26,10 +26,9 @@ install:
 
 script:
   - docker-compose exec app vendor/bin/phpunit
-  
+
   - sonar-scanner \
     -Dsonar.projectKey=Lusitaniae_API-Exercise \
-    -Dsonar.organization=lusitaniae-github \
     -Dsonar.sources=. \
     -Dsonar.host.url=https://sonarcloud.io \
     -Dsonar.login=$SONAR_TOKEN
