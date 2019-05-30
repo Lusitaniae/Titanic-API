@@ -8,7 +8,7 @@ class ApiHttpTest extends TestCase
     */
     public function testHome()
     {
-      $response = $this->json('GET', '/api/v1/')
+      $this->json('GET', '/api/v1/')
                       ->seeJson(["Welcome to the Titanic Passenger API."]);
     }
 
@@ -17,7 +17,7 @@ class ApiHttpTest extends TestCase
     */
     public function testIndex()
     {
-      $response = $this->json('GET', '/api/v1/passengers')
+      $this->json('GET', '/api/v1/passengers')
                       ->seeJson([
                           "name" => "Mr. Patrick Dooley"
                         ]);
@@ -28,7 +28,7 @@ class ApiHttpTest extends TestCase
     */
     public function testGetPassenger()
     {
-      $response = $this->json('GET', '/api/v1/passenger/3')
+      $this->json('GET', '/api/v1/passenger/3')
                       ->seeJson([
                           "name" => "Miss. Laina Heikkinen"
                         ]);
@@ -49,7 +49,7 @@ class ApiHttpTest extends TestCase
           'parents_children_aboard' => 1,
           'fare' => '120.4215'
       ];
-      $response = $this->json('POST', '/api/v1/passenger', $passenger)
+      $this->json('POST', '/api/v1/passenger', $passenger)
                       ->seeJson($passenger);
     }
 
@@ -68,7 +68,7 @@ class ApiHttpTest extends TestCase
           'parents_children_aboard' => 1,
           'fare' => '120.4215'
       ];
-      $response = $this->json('PUT', '/api/v1/passenger/3', $passenger)
+      $this->json('PUT', '/api/v1/passenger/3', $passenger)
                       ->seeJson($passenger);
     }
 
@@ -77,7 +77,7 @@ class ApiHttpTest extends TestCase
     */
     public function testDeletePassenger()
     {
-      $response = $this->json('DELETE', '/api/v1/passenger/6')
+      $this->json('DELETE', '/api/v1/passenger/6')
                       ->seeJson(['passanger removed successfully']);
     }
 }
