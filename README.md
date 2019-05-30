@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/Lusitaniae/API-Exercise.svg?branch=master)](https://travis-ci.com/Lusitaniae/API-Exercise)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Lusitaniae/API-Exercise/master/LICENSE)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Lusitaniae_API-Exercise&metric=alert_status)](https://sonarcloud.io/dashboard?id=Lusitaniae_API-Exercise)
 
 The Titanic Passenger API is a simple RESTful API built on PHP Lumen.
 
