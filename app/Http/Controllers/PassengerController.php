@@ -42,9 +42,7 @@ class PassengerController extends Controller
 
      public function update(Request $request, $id)
      {
-        $passenger= Passenger::find($id);
-
-        $passenger = new Passenger();
+        $passenger = Passenger::find($id);
         $passenger->survived = $request->input('survived');
         $passenger->pclass = $request->input('pclass');
         $passenger->name = $request->input('name');
